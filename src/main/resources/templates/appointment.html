@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <p style="color: red">[[${doctor_present}]]</p>
+    <table>
+     
+        
+        <form action="/appointment/appointment_info" method="post">
+
+            <tr>
+                <td>
+                    Doctor
+                </td>
+                <td>
+                  
+                    <select name="doctorname" id="doctorname" style="width: 170px;" required>
+                   <option th:each="Doctor:${listDoctor}"
+                        th:value="${Doctor.id}"
+                        th:text="${Doctor.name}"
+                   ></option>
+        
+                    </select>
+                </td>
+        
+              </tr>
+              <tr>
+                <td>
+                    Date
+                </td>
+                <td>
+                    <input type="date" name="appointmentdate" id="appointment_date">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                    No.of Slots
+                </td>
+                <td>
+                    <input type="text" name="slots" id="slots">
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  Details
+                </td>
+                <td>
+                    <textarea name="details" id="" cols="30" rows="5"></textarea>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                    Consultation Fee
+                </td>
+                <td>
+                    <input type="text" name="con_fee" id="con_fee">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  
+                </td>
+                <td>
+                    <input type="submit" value="Add">
+                </td>
+              </tr>
+
+              
+
+
+        
+        </form>
+    </table>
+</body>
+</body>
+</html>

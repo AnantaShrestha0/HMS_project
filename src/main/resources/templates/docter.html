@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <table>
+        <form action="/doctor/doctor_info" method="post">
+      <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            <input type="text" name="name" id="name">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            Email id
+        </td>
+        <td>
+            <input type="email" name="email" id="email">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            Specialization
+        </td>
+        <td>
+          
+            <select name="Specialization" id="Specification" style="width: 170px;">
+             <option value="" disabled selected hidden>Choose</option>
+           <option th:each="Specialization:${listspecializarion}"
+                th:value="${Specialization.name}"
+                th:text="${Specialization.name}"
+           >kr</option>
+
+            </select>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+            Address
+        </td>
+        <td>
+            <textarea name="address" id="" cols="30" rows="5"></textarea>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            Mobile
+        </td>
+        <td>
+            <input type="text" name="mobile" id="">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            Gender
+        </td>
+        <td>
+            <div class="ko">
+            <input type="radio" name="gender" id="" value="Male"> M  <input type="radio" name="gender" id="" value="Female"> F
+        </div>
+        </td>
+      </tr>
+      <tr>
+     
+        <td>
+            Note
+        </td>
+        <td>
+            <textarea name="note" id="" cols="30" rows="5"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+            <input type="file" name="imagefilee" id="imagefile">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+
+        </td>
+        <td>
+            <input type="submit" value="create">
+        </td>
+      </tr>
+    </form>
+
+    </table>
+</body>
+</html>

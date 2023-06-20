@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+        <form action="/appointment_list/appointmentlistdata" method="post"]>
+        <tr>
+            <td>
+                  
+                <select name="doctorid" id="doctorid" style="width: 170px;" required>
+                    <option value="" disabled selected hidden>Doctor</option>
+                    <option th:each="Doctor:${listDoctor}"
+                    th:value="${Doctor.id}"
+                    th:text="${Doctor.name}"
+               ></option>
+    
+                </select>
+            </td>
+        </tr>
+        <input type="submit" value="Search">
+    </form>
+</table>
+<table>
+        <tbody>
+            <tr th:each="appointment:${appointmentlist}">
+                <td>
+                  [[${appointment.doctorname}]]
+                  [[${appointment.appointementdate}]]
+           
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
